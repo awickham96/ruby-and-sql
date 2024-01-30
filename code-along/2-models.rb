@@ -11,7 +11,7 @@ Firm.destroy_all
 # - Insert, read, update, and delete rows in companies table
 #   (i.e. full CRUD of company data).
 
-#puts "There are #{Firm.all.count} companies"
+puts "There are #{Firm.all.count} companies"
 
 # 1a. check out the schema file
 # 1b. check out the model file
@@ -28,9 +28,9 @@ new_company["state"] = "CA"
 new_company["url"] = "https://www.apple.com"
 new_company.save
 
-#puts new_company.inspect
+puts new_company.inspect
 
-#puts "There are #{Firm.all.count} companies"
+puts "There are #{Firm.all.count} companies"
 
 new_company2 = Firm.new
 new_company2["name"] = "Amazon"
@@ -47,7 +47,7 @@ new_company3["state"] = "CA"
 new_company3["url"] = "https://www.twitter.com"
 new_company3.save
 
-#puts "There are #{Firm.all.count} companies"
+puts "There are #{Firm.all.count} companies"
 
 # 3. query companies table to find all row with California company
 

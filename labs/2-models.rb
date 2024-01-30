@@ -19,19 +19,46 @@ Salesperson.destroy_all
 # 1a. check out the schema file
 # 1b. check out the model file
 
-# 2. insert 1-2 rows in salespeople table.
+# ^ for these, he means to manually click into the schema and model files on the left
+
+#2. insert 1-2 rows in salespeople table.
+
+new_salesperson = Salesperson.new
+
+puts new_salesperson.inspect
+
+new_salesperson["first_name"] = "Nick"
+new_salesperson["last_name"] = "Ahern"
+new_salesperson["email"] = "husband@anna.com"
+new_salesperson.save
+
+puts new_salesperson.inspect
+
+new_salesperson2 = Salesperson.new
+new_salesperson2["first_name"] = "Iris"
+new_salesperson2["last_name"] = "Wickham"
+new_salesperson2["email"] = "sister@anna.com"
+new_salesperson2.save
+
+puts new_salesperson2.inspect
 
 # 3. write code to display how many salespeople rows are in the database
 
-# ---------------------------------
-# Salespeople: 2
+puts "There are #{Salesperson.all.count} salespeople"
 
 # 4. modify/update column data for a row in the salespeople table.
+
+Nick = Salesperson.find_by({"last_name" => "Ahern"})
+Nick["first_name"] = "Nicholas"
+Nick.save
+puts Nick["first_name"]
 
 # CHALLENGE:
 # 5. write code to display each salesperson's full name
 
-# ---------------------------------
-# Salespeople: 2
-# Ben Block
-# Brian Eng
+puts "Salespeople: #{Salesperson.all.count}"
+
+Iris = Salesperson.find_by({"first_name" => "Iris"})
+
+puts "#{Nick["first_name"]} #{Nick["last_name"]}"
+puts "#{Iris["first_name"]} #{Iris["last_name"]}"
