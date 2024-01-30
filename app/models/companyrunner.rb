@@ -1,0 +1,2 @@
+class Companyrunner < ApplicationRecord
+end
